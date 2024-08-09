@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="title">Название:</label>
+        <input type="text" name="title" value="{{ book.title }}">
+        
+        <label for="author">Автор:</label>
+        <input type="text" name="author"  value="{{ book.author }}">
+        
+        <label for="published_date">Дата публикации:</label>
+        <input type="date" name="published_date"  value="{{ book.published_date }}">
+        
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" value="{{ book.isbn }}">
+        
+        <label for="price">Цена:</label>
+        <input type="number" name="price" step="0.01"  value="{{ book.price }}">
+    
+        
+        <button type="submit"> Update </button>
+    </form>
+</body>
+</html>
